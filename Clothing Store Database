@@ -1,0 +1,43 @@
+/**Piya Store:
+Jeans 15 10 Blue
+Tops 17 5 Pink
+Pants 20 15 Black
+Bras 18 4 Purple
+Underwear 21 3 Black
+Crop top 5 4 Brown
+Shorts 10 7 Black
+Cami 5 2 White
+Dress 7 15 Black
+Corset 5 10 Black
+T-shirt 20 5 Brown
+Tank Top 10 2 Green
+Blouse 6 11 Yellow
+Skirt 9 6 White
+Bathing Suit 13 8 Yellow
+**/
+#In this SQL, I am querying a database with a table including clothing items with the quantity, thier price and the available colors.
+
+CREATE TABLE PiyaStore (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, color TEXT);
+INSERT INTO PiyaStore VALUES(1, "Jeans", 15, 10, "blue");
+INSERT INTO PiyaStore VALUES(2, "Tops", 17, 5, "Pink");
+INSERT INTO PiyaStore VALUES(3, "Pants", 20, 15, "Black");
+INSERT INTO PiyaStore VALUES(4, "Bras", 18, 4, "Purple");
+INSERT INTO PiyaStore VALUES(5, "Underwear", 21, 3, "Black");
+INSERT INTO PiyaStore VALUES(6, "Crop Top", 5, 4, "Brown");
+INSERT INTO PiyaStore VALUES(7, "Shorts", 10, 7, "Black");
+INSERT INTO PiyaStore VALUES(8, "Cami", 5, 2, "White");
+INSERT INTO PiyaStore VALUES(9, "Dress", 7, 15, "Black");
+INSERT INTO PiyaStore VALUES(10, "Corset", 5, 10, "Black");
+INSERT INTO PiyaStore VALUES(11, "T-Shirt", 20, 5, "Brown");
+INSERT INTO PiyaStore VALUES(12, "Tank Top", 10, 2, "Green");
+INSERT INTO PiyaStore VALUES(13, "Blouse", 6, 11, "Yellow");
+INSERT INTO PiyaStore VALUES(14, "Skirt", 9, 6, "White");
+INSERT INTO PiyaStore VALUES(15, "Bathing Suit", 13, 8, "Yellow");
+
+SELECT * FROM PiyaStore;
+
+#I displayed the database ordered by price.
+SELECT * FROM PiyaStore ORDER BY price;
+
+#I displayed the grouping of the quantity based on color and than I displayed the sum of the quantity based on each color
+SELECT color, SUM(quantity) FROM PiyaStore GROUP BY color;
